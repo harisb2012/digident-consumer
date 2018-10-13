@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet, ActivityIndicator } from 'react-native'
 import * as routes from '../navigation/routes'
 
 const styles = StyleSheet.create({
@@ -20,7 +20,7 @@ export class AuthLoadingScene extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Loading...</Text>
+        <ActivityIndicator size="large" />
       </View>
     )
   }
