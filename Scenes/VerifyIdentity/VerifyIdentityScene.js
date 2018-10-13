@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
   NativeEventEmitter,
   NativeModules,
-  ActivityIndicator
+  ActivityIndicator,
+  Image
 } from 'react-native'
 import { NativeBridge } from '../../native/NativeBridge'
 
@@ -15,9 +16,35 @@ import * as routes from '../../navigation/routes'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
+    backgroundColor: '#fff'
+  },
+  description: {
+    marginTop: 100,
+    textAlign: 'center',
+    fontSize: 25
+  },
+  buttonWrapper: {
+    flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+  verifyManuallyButton: {
+    borderWidth: 1,
+    borderRadius: 20,
+    paddingHorizontal: 50,
+    paddingVertical: 20,
+    backgroundColor: '#ECECEC'
+  },
+  verifyButtonText: {
+    color: '#464646',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 18,
+  },
+  digiLogo: {
+    height: 100,
+    marginBottom: 10
   }
 })
 
@@ -58,7 +85,12 @@ export class VerifyIdentityScene extends React.Component {
 
     if (loading) {
       return (
-        <View style={styles.container}>
+        <View
+          style={[
+            styles.container,
+            { justifyContent: 'center', alignItems: 'center' }
+          ]}
+        >
           <ActivityIndicator size="large" />
         </View>
       )
@@ -66,13 +98,36 @@ export class VerifyIdentityScene extends React.Component {
 
     return (
       <View style={styles.container}>
-        <TouchableOpacity>
-          <Text> Verify manually </Text>
-        </TouchableOpacity>
+        <Text style={styles.description}> Verify your identity </Text>
 
-        <TouchableOpacity onPress={this.handleDigi}>
-          <Text> Use digi.me </Text>
-        </TouchableOpacity>
+        <View
+          style={[
+            styles.buttonWrapper,
+            { alignItems: 'flex-end', marginBottom: 60 }
+          ]}
+        >
+          <TouchableOpacity style={styles.verifyManuallyButton}>
+            <Text style={styles.verifyButtonText}> Verify manually </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View
+          style={[
+            styles.buttonWrapper,
+            { alignItems: 'flex-start', marginTop: 20 }
+          ]}
+        >
+          <TouchableOpacity onPress={this.handleDigi}>
+            <Image
+              source={require('../../assets/images/digi-me-logo.png')}
+              style={styles.digiLogo}
+              resizeMode="contain"
+            />
+            <Text style={styles.verifyButtonText}>
+              Use digi.me for identity verification
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     )
   }
