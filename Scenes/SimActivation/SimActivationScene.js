@@ -1,7 +1,9 @@
 import React from 'react'
 
-import { View, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, Text } from 'react-native'
 import { SimActivationForm } from './SimActivationForm'
+
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import * as routes from '../../navigation/routes'
 
 const styles = StyleSheet.create({
@@ -11,13 +13,23 @@ const styles = StyleSheet.create({
   },
   logoWrapper: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 80
   },
   logo: {
     width: 80,
     height: 80,
     marginTop: 70,
     marginHorizontal: 50
+  },
+  contentWrapper: {
+    alignItems: 'center',
+    marginBottom: 60
+  },
+  text: {
+    textAlign: 'center',
+    marginTop: 15,
+    fontSize: 18
   }
 })
 
@@ -28,7 +40,7 @@ export class SimActivationScene extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAwareScrollView style={styles.container}>
         <View style={styles.logoWrapper}>
           <Image
             source={require('../../assets/images/tmobile-logo.png')}
@@ -36,8 +48,18 @@ export class SimActivationScene extends React.Component {
           />
         </View>
 
+        <View style={styles.contentWrapper}>
+          <Text style={[styles.text, { marginBottom: 15 }]}>
+            Welcome to T-Mobile
+          </Text>
+
+          <Text style={styles.text}>
+            Start verification process to activate your SIM card
+          </Text>
+        </View>
+
         <SimActivationForm onProceedClicked={this.proceed.bind(this)} />
-      </View>
+      </KeyboardAwareScrollView>
     )
   }
 }

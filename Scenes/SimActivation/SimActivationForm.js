@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     padding: 0,
-    margin: 0,
+    marginLeft: 0,
     textAlign: 'left',
     fontSize: 20
   },
@@ -26,8 +26,23 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row'
   },
+  button: {
+    borderWidth: 1,
+    borderRadius: 50,
+    borderColor: '#EA1C8B',
+    backgroundColor: '#EA1C8B',
+    paddingVertical: 10,
+    paddingHorizontal: 45
+  },
   buttonText: {
-    fontSize: 20
+    fontSize: 20,
+    color: '#fff',
+    fontWeight: 'bold'
+  },
+  buttonWrapper: { 
+    flex: 1, 
+    alignItems: 'center', 
+    marginTop: 250 
   }
 })
 
@@ -68,13 +83,13 @@ export class SimActivationForm extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.countryPickerWrapper}>
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1.5 }}>
             <PhoneInput
+              textProps={{fontSize: 20}}
               ref={ref => {
                 this.phone = ref
               }}
               onPressFlag={this.onPressFlag}
-              style={{ fontSize: 20 }}
             />
 
             <CountryPicker
@@ -90,7 +105,7 @@ export class SimActivationForm extends React.Component {
             </CountryPicker>
           </View>
 
-          <View style={{ flex: 3, marginTop: -3 }}>
+          <View style={{ flex: 3.5, marginTop: -2 }}>
             <TextInput
               ref="textInput"
               name="phoneNumber"
@@ -101,16 +116,14 @@ export class SimActivationForm extends React.Component {
               onChangeText={this.onChangeText}
               placeholder="Enter Phone Number"
               keyboardType={Platform.OS === 'ios' ? 'number-pad' : 'numeric'}
-              style={[styles.textInput]}
               maxLength={20}
-              returnKeyType="done"
               style={styles.textInput}
             />
           </View>
         </View>
 
-        <View style={{ flex: 1, alignItems: 'center' }}>
-          <TouchableOpacity onPress={onProceedClicked}>
+        <View style={styles.buttonWrapper}>
+          <TouchableOpacity onPress={onProceedClicked} style={styles.button}>
             <Text style={styles.buttonText}> Next </Text>
           </TouchableOpacity>
         </View>
