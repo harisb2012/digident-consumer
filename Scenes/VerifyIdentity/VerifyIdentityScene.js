@@ -5,7 +5,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   NativeEventEmitter,
-  NativeModules
+  NativeModules,
+  ActivityIndicator
 } from 'react-native'
 import { NativeBridge } from '../../native/NativeBridge'
 
@@ -28,6 +29,10 @@ export class VerifyIdentityScene extends React.Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      loading: false
+    }
+
     this.handleDigi = this.handleDigi.bind(this)
     this.emitter = new NativeEventEmitter(NativeModules.NativeBridge)
     this.emitter.addListener(digiMeEvents.FILE_DATA, fileData => {
@@ -44,10 +49,21 @@ export class VerifyIdentityScene extends React.Component {
   }
 
   handleDigi() {
+    this.setState({ loading: true })
     NativeBridge.getNativeBridge().initSDK()
   }
 
   render() {
+    const { loading } = this.state
+
+    if (loading) {
+      return (
+        <View style={styles.container}>
+          <ActivityIndicator size="large" />
+        </View>
+      )
+    }
+
     return (
       <View style={styles.container}>
         <TouchableOpacity>
