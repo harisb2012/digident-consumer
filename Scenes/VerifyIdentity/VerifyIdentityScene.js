@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     color: '#464646',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 18
   },
   digiLogo: {
     height: 100,
@@ -64,13 +64,22 @@ export class VerifyIdentityScene extends React.Component {
     this.emitter = new NativeEventEmitter(NativeModules.NativeBridge)
     this.emitter.addListener(digiMeEvents.FILE_DATA, fileData => {
       // used for demo purposes
+      // after digi.me starts supporting postbox feature, fileData can be used
       const mockedData = {
         identificationId: '1234-5678',
-        verified: true
+        verified: true,
+        firstName: 'Dino',
+        lastName: 'Merlin',
+        address: 'Bascarsija 42',
+        zipCode: '71000',
+        city: 'Sarajevo',
+        country: 'Bosnia and Herzegovina'
       }
 
       if (mockedData.verified) {
-        this.props.navigation.navigate(routes.IDENTITY_VERIFIED)
+        this.props.navigation.navigate(routes.IDENTITY_VERIFIED, {
+          verificationData: mockedData
+        })
       }
     })
   }
