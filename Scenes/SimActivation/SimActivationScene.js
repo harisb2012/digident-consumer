@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { View, StyleSheet, Image } from 'react-native'
+import { SimActivationForm } from './SimaActivationForm'
 
 const styles = StyleSheet.create({
   container: {
@@ -28,6 +30,8 @@ export class SimActivationScene extends React.Component {
             style={styles.logo}
           />
         </View>
+
+        <SimActivationForm />
       </View>
     )
   }
