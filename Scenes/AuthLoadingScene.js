@@ -1,6 +1,14 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import * as routes from '../navigation/routes'
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+})
 
 export class AuthLoadingScene extends React.Component {
   componentDidMount() {
@@ -11,7 +19,7 @@ export class AuthLoadingScene extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text>Loading...</Text>
       </View>
     )
