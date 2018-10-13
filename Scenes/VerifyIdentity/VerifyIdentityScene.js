@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { NativeBridge } from '../../native/NativeBridge';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,6 +12,16 @@ const styles = StyleSheet.create({
 })
 
 export class VerifyIdentityScene extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleDigi = this.handleDigi.bind(this);
+  }
+
+  handleDigi() {
+    NativeBridge.getNativeBridge().initSDK();
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -18,7 +29,7 @@ export class VerifyIdentityScene extends React.Component {
           <Text> Verify manually </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={this.handleDigi}>
           <Text> Use digi.me </Text>
         </TouchableOpacity>
       </View>
