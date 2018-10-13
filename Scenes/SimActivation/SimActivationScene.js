@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { View, StyleSheet, Image } from 'react-native'
-import { SimActivationForm } from './SimaActivationForm'
+import { SimActivationForm } from './SimActivationForm'
+import * as routes from '../../navigation/routes'
 
 const styles = StyleSheet.create({
   container: {
@@ -21,6 +22,10 @@ const styles = StyleSheet.create({
 })
 
 export class SimActivationScene extends React.Component {
+  proceed() {
+    this.props.navigation.navigate(routes.VERIFY_IDENTITY)
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -31,7 +36,7 @@ export class SimActivationScene extends React.Component {
           />
         </View>
 
-        <SimActivationForm />
+        <SimActivationForm onProceedClicked={this.proceed.bind(this)} />
       </View>
     )
   }
