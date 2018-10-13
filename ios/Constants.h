@@ -2,8 +2,8 @@
 // digi.me React Native Demo
 // This file has been generated from javascript source
 //******************************************************
-#define APPLICATION_NAME @"test"
-#define APPLICATION_ID @"test"
-#define CONTRACT_ID @"test"
-#define P12_FILENAME @"test"
-#define P12_PASSPHRASE @"test"
+#define APPLICATION_NAME @"DigIDENT"
+#define APPLICATION_ID @"5ho7sgFxsWJxXG2Nwh5AMNIWOlvMv3VO"
+#define CONTRACT_ID @"9jzH9bgrGvoJQ9VoMpXAwJdFgbPApidd"
+#define P12_FILENAME @"9jzH9bgrGvoJQ9VoMpXAwJdFgbPApidd"
+#define P12_PASSPHRASE @"digime"

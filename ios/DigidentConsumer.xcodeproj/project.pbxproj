@@ -40,6 +40,7 @@
 		93A9F61C572FBC60571E7547 /* libPods-DigidentConsumer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF9FF1F903CB27F5FF7038B /* libPods-DigidentConsumer.a */; };
 		A486DBAF2172659D0020F049 /* libDigiMeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A486DBAE2172659D0020F049 /* libDigiMeSDK.a */; };
 		A486DBD7217265E50020F049 /* NativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A486DBD6217265E50020F049 /* NativeBridge.m */; };
+		A486DBD921726AF40020F049 /* 9jzH9bgrGvoJQ9VoMpXAwJdFgbPApidd.p12 in Resources */ = {isa = PBXBuildFile; fileRef = A486DBD821726A8B0020F049 /* 9jzH9bgrGvoJQ9VoMpXAwJdFgbPApidd.p12 */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
 
@@ -350,6 +351,7 @@
 		A486DBAE2172659D0020F049 /* libDigiMeSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDigiMeSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A486DBD5217265B70020F049 /* NativeBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeBridge.h; sourceTree = "<group>"; };
 		A486DBD6217265E50020F049 /* NativeBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeBridge.m; sourceTree = "<group>"; };
+		A486DBD821726A8B0020F049 /* 9jzH9bgrGvoJQ9VoMpXAwJdFgbPApidd.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9jzH9bgrGvoJQ9VoMpXAwJdFgbPApidd.p12; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		D821577569ECC7DF624EF424 /* Pods-DigidentConsumer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigidentConsumer.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigidentConsumer/Pods-DigidentConsumer.release.xcconfig"; sourceTree = "<group>"; };
 		FCF9FF1F903CB27F5FF7038B /* libPods-DigidentConsumer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigidentConsumer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -589,6 +591,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A486DBD821726A8B0020F049 /* 9jzH9bgrGvoJQ9VoMpXAwJdFgbPApidd.p12 */,
 				13B07FAE1A68108700A75B9A /* DigidentConsumer */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* DigidentConsumerTests */,
@@ -1079,6 +1082,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A486DBD921726AF40020F049 /* 9jzH9bgrGvoJQ9VoMpXAwJdFgbPApidd.p12 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
