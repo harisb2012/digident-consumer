@@ -5,6 +5,7 @@ import { SimActivationForm } from './SimActivationForm'
 
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import * as routes from '../../navigation/routes'
+import { iOSUIKit } from 'react-native-typography'
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
   logoWrapper: {
     flex: 1,
     alignItems: 'center',
-    marginBottom: 80
+    marginBottom: 20
   },
   logo: {
     width: 80,
@@ -23,13 +24,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 50
   },
   contentWrapper: {
-    alignItems: 'center',
-    marginBottom: 60
-  },
-  text: {
-    textAlign: 'center',
-    marginTop: 15,
-    fontSize: 18
+    paddingLeft: 20,
+    marginBottom: 50
   }
 })
 
@@ -49,11 +45,11 @@ export class SimActivationScene extends React.Component {
         </View>
 
         <View style={styles.contentWrapper}>
-          <Text style={[styles.text, { marginBottom: 15 }]}>
-            Welcome to T-Mobile
+          <Text style={[iOSUIKit.largeTitleEmphasized, {marginTop: 15}]}>
+            T-Mobile Activation
           </Text>
 
-          <Text style={styles.text}>
+          <Text style={iOSUIKit.footnote}>
             Start verification process to activate your SIM card
           </Text>
         </View>

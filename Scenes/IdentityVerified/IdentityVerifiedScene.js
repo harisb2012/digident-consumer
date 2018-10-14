@@ -1,17 +1,14 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, ScrollView, Text, StyleSheet, SafeAreaView } from 'react-native'
 import { get, map } from 'lodash'
 import { camelToTitle } from '../../helpers/camelCaseToTitle'
+import { human, iOSUIKit } from 'react-native-typography'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff'
-  },
-  title: {
-    fontWeight: 'bold'
+    backgroundColor: '#fff',
+    padding: 30
   }
 })
 
@@ -30,21 +27,20 @@ export class IdentityVerifiedScene extends React.Component {
     const verificationData = get(params, 'verificationData')
 
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={[iOSUIKit.largeTitleEmphasized, {marginVertical: 100}]}>Pre-verified Identity imported!</Text>
         {map(fieldsToDisplay, currentField => (
-          <View
+          <SafeAreaView
+            key={currentField}
             style={{
-              flex: 1,
-              alignItems: 'flex-start',
-              flexDirection: 'column'
+              flex: 1
             }}
           >
-            <Text style={styles.title}> {camelToTitle(currentField)}: </Text>
-            <Text> {get(verificationData, currentField)} </Text>
-          </View>
+            <Text style={human.subhead}> {camelToTitle(currentField)}: </Text>
+            <Text style={human.headline}> {get(verificationData, currentField)} </Text>
+          </SafeAreaView>
         ))}
-        <Text style={styles.itemTitle} />
-      </View>
+      </ScrollView>
     )
   }
 }

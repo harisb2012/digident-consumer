@@ -43,7 +43,7 @@ RCT_EXPORT_METHOD(initSDK)
 
 - (void)sessionCreated:(CASession *)session {
   NSLog(@"Session Created!");
-}
+} 
 
 - (void)sessionCreateFailed:(NSError *)error {
   NSLog(@"Session Create Failed");

@@ -16,7 +16,8 @@ import * as routes from '../../navigation/routes'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    paddingHorizontal: 20
   },
   description: {
     marginTop: 100,
@@ -31,10 +32,18 @@ const styles = StyleSheet.create({
   },
   verifyManuallyButton: {
     borderWidth: 1,
-    borderRadius: 20,
-    paddingHorizontal: 50,
+    borderRadius: 10,
+    borderColor: '#BEBEBE',
     paddingVertical: 20,
+    flex: 1,
     backgroundColor: '#ECECEC'
+  },
+  digimeButton: {
+    borderWidth: 2,
+    borderRadius: 10,
+    borderColor: '#EA1C8B',
+    paddingVertical: 20,
+    flex: 1
   },
   verifyButtonText: {
     color: '#464646',
@@ -43,7 +52,8 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   digiLogo: {
-    height: 100,
+    alignSelf: 'center',
+    height: 70,
     marginBottom: 10
   }
 })
@@ -68,12 +78,12 @@ export class VerifyIdentityScene extends React.Component {
       const mockedData = {
         identificationId: '1234-5678',
         verified: true,
-        firstName: 'Dino',
-        lastName: 'Merlin',
-        address: 'Bascarsija 42',
+        firstName: 'Harun',
+        lastName: 'Smrkovic',
+        address: 'Grbavicka',
         zipCode: '71000',
         city: 'Sarajevo',
-        country: 'Bosnia and Herzegovina'
+        country: 'BiH'
       }
 
       if (mockedData.verified) {
@@ -126,9 +136,12 @@ export class VerifyIdentityScene extends React.Component {
             { alignItems: 'flex-start', marginTop: 20 }
           ]}
         >
-          <TouchableOpacity onPress={this.handleDigi}>
+          <TouchableOpacity
+            onPress={this.handleDigi}
+            style={styles.digimeButton}
+          >
             <Image
-              source={require('../../assets/images/digi-me-logo.png')}
+              source={require('../../assets/images/digime.png')}
               style={styles.digiLogo}
               resizeMode="contain"
             />
